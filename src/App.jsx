@@ -321,8 +321,20 @@ export default function App() {
       <main className="relative z-10 max-w-[1600px] mx-auto min-h-screen flex flex-col">
         
         {/* HERO SECTION */}
-        <section className="min-h-[100svh] pt-32 pb-16 px-4 md:px-8 flex flex-col justify-center border-b border-zinc-900 relative">
-          <div className="w-full mb-8 z-10 cursor-default">
+        <section className="min-h-[100svh] pt-32 pb-16 px-4 md:px-8 flex flex-col justify-center border-b border-zinc-900 relative overflow-hidden">
+          
+          {/* --- NEW: Leaning Pose Image --- */}
+          <div className="absolute bottom-0 right-0 md:-right-8 lg:-right-48 h-[60%] md:h-[85%] lg:h-[75%] z-0 pointer-events-none flex justify-end">
+            <FadeReveal delay={1200} className="h-full w-full">
+              <img 
+                src="https://raw.githubusercontent.com/Yogarathinam/portfolio/main/public/wallpose.png" 
+                alt="Yogarathinam - System Integrator" 
+                className="h-full w-auto object-contain object-right-bottom opacity-50 md:opacity-80 grayscale contrast-125 drop-shadow-[-10px_0_30px_rgba(204,255,0,0.15)] scale-110 lg:scale-125 origin-bottom-right"
+              />
+            </FadeReveal>
+          </div>
+
+          <div className="w-full mb-8 z-10 cursor-default relative">
             <h1 className="flex flex-col font-black uppercase tracking-tighter leading-[0.85] text-[clamp(3.5rem,11vw,12rem)] w-full">
               <ScrambleHeading text="HARDWARE." delay={100} className="text-white" />
               <ScrambleHeading text="SOFTWARE." delay={600} className="text-transparent [-webkit-text-stroke:1px_#52525b] md:[-webkit-text-stroke:2px_#52525b]" />
@@ -346,7 +358,7 @@ export default function App() {
               </ul>
             </div>
             
-            <div className="w-full lg:w-2/3">
+            <div className="w-full lg:w-2/3 relative z-20">
               <p className="text-sm md:text-lg font-medium text-zinc-400 leading-relaxed max-w-4xl mb-8">
                 I am driven by an insatiable curiosity to learn how things work, and an absolute obsession with making them work better. I operate at the intersection of raw hardware (circuits, kinetics), artificial intelligence, and full-stack software architecture.
               </p>
@@ -356,7 +368,7 @@ export default function App() {
                 <a href="#resume" className="flex items-center gap-2 bg-[#ccff00] text-black px-6 py-3 font-bold uppercase tracking-widest hover:bg-white transition-colors cursor-none interactive-element">
                   <FileText className="w-4 h-4" /> View Resume
                 </a>
-                <a href="https://github.com/Yogarathinam" target="_blank" rel="noreferrer" className="flex items-center gap-2 border border-zinc-700 text-white px-6 py-3 font-bold uppercase tracking-widest hover:border-[#ccff00] hover:text-[#ccff00] transition-colors cursor-none interactive-element">
+                <a href="https://github.com/Yogarathinam" target="_blank" rel="noreferrer" className="flex items-center gap-2 border border-zinc-700 text-white px-6 py-3 font-bold uppercase tracking-widest hover:border-[#ccff00] hover:text-[#ccff00] transition-colors cursor-none interactive-element bg-[#050505]/50 backdrop-blur-sm">
                   <GithubIcon className="w-4 h-4" /> GitHub Profile
                 </a>
               </div>
